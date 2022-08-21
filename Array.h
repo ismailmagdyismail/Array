@@ -16,6 +16,7 @@ public:
     ~Array();
     int getSize()const{return size;}
     int& operator[](int);
+    int operator[](int)const;
     const Array& operator=(const Array& other);
     bool  operator==(const Array& other)const;
     bool  operator!=(const Array& other)const;
