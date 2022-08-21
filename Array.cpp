@@ -6,7 +6,7 @@
 using namespace std;
 
 // Default Constructor
-Array::Array(int size):size{size} {
+Array::Array(size_t size):size{size} {
     if(size>0)
         ptr = new int [size];
 }
@@ -19,6 +19,16 @@ Array::Array(const Array& other) {
     ptr = new int[size];
     for (int i = 0; i < size; ++i) {
         ptr[i]=other.ptr[i];
+    }
+}
+
+// initialization list
+Array::Array(std::initializer_list<int> list) {
+    size = list.size();
+    ptr = new int [size];
+    size_t i{0};
+    for (auto element:list) {
+        ptr[i] = element;
     }
 }
 
@@ -110,3 +120,4 @@ istream & operator>>(istream& in ,Array&arr){
     }
     return in;
 }
+
