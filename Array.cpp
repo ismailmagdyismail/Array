@@ -36,6 +36,14 @@ int &Array::operator[](int position) {
 }
 
 
+// Indexing [] as a Const R value
+
+int Array::operator[](int position) const {
+    if(position>=size||position<0) // invalid Subscript (out of range)
+        throw out_of_range {"Subscript out of Range\n"};
+    return ptr[position];
+}
+
 
 // Assignment
 const Array& Array::operator=(const Array &other){
