@@ -11,10 +11,11 @@ class Array {
     friend std::ostream& operator<<(std::ostream& ,const Array&);
     friend std::istream& operator>>(std::istream& ,Array&);
 public:
-    Array(int size = 10 );
+    Array(size_t size = 10 );
     Array(const Array& );
+    Array(std::initializer_list<int>);
     ~Array();
-    int getSize()const{return size;}
+    size_t getSize()const{return size;}
     int& operator[](int);
     int operator[](int)const;
     const Array& operator=(const Array& other);
@@ -22,7 +23,7 @@ public:
     bool  operator!=(const Array& other)const;
     bool  operator>(const Array& other)const;
 private:
-    int size;
+    size_t size;
     int* ptr;
 };
 
