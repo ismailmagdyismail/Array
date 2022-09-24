@@ -5,7 +5,7 @@
 #include "Array.h"
 using namespace std;
 
-void func(const Array& arr){
+void func(const Array& arr){// can do implicit conversions if constructor is not explicit
     cout<<arr;
 }
 int main() {
