@@ -5,8 +5,11 @@
 #include "Array.h"
 using namespace std;
 
+void func(const Array& arr){
+    cout<<arr;
+}
 int main() {
-    Array integers1{7}; // seven-element Array
+    Array integers1{7}; // one-element Array using initilizer list
     Array integers2; // 10-element Array by default
 
     // print integers1 size and contents
@@ -68,7 +71,5 @@ int main() {
     catch (out_of_range& ex) {
         cout << "An exception occurred: " << ex.what() << endl;
     }
-
-
+    
 }
-
